@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.1.0
+  size_config: ^2.0.3
 
 dev_dependencies:
   flutter_test:
@@ -57,15 +58,7 @@ flutter:
   assets:
     - assets/svgs/
   fonts:
-    - family: dana
-      fonts:
-        - asset: assets/fonts/Light.ttf
-          weight: 200        
-        - asset: assets/fonts/Regular.ttf
-          weight: 300          
-        - asset: assets/fonts/Medium.ttf
-          weight: 500        
-        - asset: assets/fonts/DemiBold.ttf
-          weight: 700 
-        - asset: assets/fonts/Bold.ttf
-          weight: 800
+     - family: circular
+       fonts:
+       - asset: assets/fonts/circular-std-medium-500.ttf
+          
