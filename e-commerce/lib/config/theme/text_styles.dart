@@ -1,23 +1,22 @@
 import 'package:authentication_task/config/theme/color_pallet.dart';
 import 'package:flutter/material.dart';
 
-
 TextTheme lightTextTheme = TextTheme(
     //! title
     titleLarge: TextStyle(
-      fontFamily: "dana",
-      fontSize: 18,
+      fontFamily: "circular",
+      fontSize: 35,
       color: ColorPallet.lightColorScheme.onSurface,
       fontWeight: FontWeight.w800,
     ),
     titleMedium: TextStyle(
-      fontFamily: "dana",
+      fontFamily: "circular",
       fontSize: 16,
       color: ColorPallet.lightColorScheme.onSurface,
       fontWeight: FontWeight.w700,
-    ), 
+    ),
     titleSmall: TextStyle(
-      fontFamily: "dana",
+      fontFamily: "circular",
       fontSize: 14,
       color: ColorPallet.lightColorScheme.onSurface,
       fontWeight: FontWeight.w500,
@@ -25,32 +24,19 @@ TextTheme lightTextTheme = TextTheme(
 
 //! label
     labelLarge: TextStyle(
-        fontFamily: "dana",
+        fontFamily: "circular",
         fontSize: 14,
         fontWeight: FontWeight.w700,
         color: ColorPallet.lightColorScheme.onPrimary),
-
-
-
-
-
-bodySmall: TextStyle(
-        fontFamily: "dana",
+    bodySmall: TextStyle(
+        fontFamily: "circular",
         fontSize: 11,
         fontWeight: FontWeight.w400,
         color: ColorPallet.lightColorScheme.onSurface),
 
-
-
-
-
-
 //! body
     bodyMedium: TextStyle(
-        fontFamily: "dana",
+        fontFamily: "circular",
         fontSize: 14,
         fontWeight: FontWeight.w500,
         color: ColorPallet.lightColorScheme.surfaceBright));
-
-
- 

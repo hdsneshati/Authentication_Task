@@ -26,20 +26,18 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.primary,
-                         
       body: Column(
         children: [
           Align(
               alignment: Alignment.center,
               child: SvgPicture.asset(
-                SvgPath.ap,
+                SvgPath.sp,
                 width: 100,
                 height: 100,
-                 colorFilter: ColorFilter.mode(
-                         
-                               Theme.of(context).colorScheme.onPrimary,
-                          BlendMode.srcIn,
-                        ),
+                colorFilter: ColorFilter.mode(
+                  Theme.of(context).colorScheme.onPrimary,
+                  BlendMode.srcIn,
+                ),
               )),
         ],
       ),
