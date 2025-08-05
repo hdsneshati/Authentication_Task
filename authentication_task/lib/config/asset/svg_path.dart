@@ -1,0 +1,5 @@
+class SvgPath {
+  SvgPath._();
+  
+  
+}
