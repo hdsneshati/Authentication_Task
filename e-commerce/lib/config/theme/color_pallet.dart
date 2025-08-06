@@ -19,7 +19,7 @@ class ColorPallet {
     onSecondary: Color(0xffffffff),
     onSecondaryContainer: Color(0xff000000),
     onError: Color(0xffffffff),
-    onSurface: Color.fromARGB(85, 39, 39, 39),
+    onSurface: Color(0xff272727),
     // outline: Color(0xffD4D6DD),
     surfaceBright: Color(0xff272727),
   );
