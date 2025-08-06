@@ -1,6 +1,6 @@
 import 'package:authentication_task/config/asset/svg_path.dart';
 import 'package:authentication_task/config/extentions/gap_space_extension.dart';
-import 'package:authentication_task/core/widgets/registerform_widget.dart';
+import 'package:authentication_task/feature/presentation/authentication/widgets/registerform_widget.dart';
 import 'package:authentication_task/feature/presentation/authentication/widgets/signup_methods.dart';
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
@@ -53,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                   height: 12,
                 ),
                 SignUpMethodd(
-                  iconpath: SvgPath.google,
+                  iconpath: SvgPath.sp,
                   lable: "Google ",
                 ),
                 SizedBox(

@@ -64,7 +64,7 @@ class RegisterForm extends StatelessWidget {
                     fontFamily: "circular",
                     fontSize: 12.sp,
                     color: Colors.grey[800],
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ],

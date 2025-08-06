@@ -1,5 +1,5 @@
 import 'package:authentication_task/config/extentions/gap_space_extension.dart';
-import 'package:authentication_task/core/widgets/registerform_widget.dart';
+import 'package:authentication_task/feature/presentation/authentication/widgets/registerform_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
 
