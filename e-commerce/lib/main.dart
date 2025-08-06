@@ -1,4 +1,4 @@
-import 'package:authentication_task/feature/presentation/authentication/screens/login_password_screen.dart';
+import 'package:authentication_task/feature/presentation/authentication/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const LoginPasswordScreen(),
+        home: const LoginScreen(),
       ),
     );
   }
