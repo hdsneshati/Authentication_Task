@@ -49,29 +49,35 @@ class LoginScreen extends StatelessWidget {
                   iconpath: SvgPath.ap,
                   lable: "Apple ",
                 ),
-                SignUpMethodd(
-                  iconpath: SvgPath.ap,
-                  lable: "Google ",
+                SizedBox(
+                  height: 12,
                 ),
                 SignUpMethodd(
-                  iconpath: SvgPath.ap,
+                  iconpath: SvgPath.google,
+                  lable: "Google ",
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                SignUpMethodd(
+                  iconpath: SvgPath.facebook,
                   lable: "Facebook ",
                 )
               ],
             ),
           ),
           const Spacer(),
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              width: 134.w,
-              height: 5.h,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(100.h),
-              ),
-            ),
-          ),
+          //  Align(
+          //    alignment: Alignment.center,
+          //    child: Container(
+          //      width: 134.w,
+          //     height: 5.h,
+          //     decoration: BoxDecoration(
+          //       color: Colors.black,
+          //       borderRadius: BorderRadius.circular(100.h),
+          //     ),
+          //   ),
+          // ),
           7.h.verticalSpacer,
         ],
       ),

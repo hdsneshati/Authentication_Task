@@ -45,17 +45,18 @@ class _LoginPasswordScreenState extends State<LoginPasswordScreen> {
             ),
           ),
           const Spacer(),
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              width: 134.w,
-              height: 5.h,
-              decoration: BoxDecoration(
-                color: Colors.black,
-                borderRadius: BorderRadius.circular(100.h),
-              ),
-            ),
-          ),
+
+          ///  Align(
+          //    alignment: Alignment.center,
+          //   child: Container(
+          //    width: 134.w,
+          //    height: 5.h,
+          //    decoration: BoxDecoration(
+          //      color: Colors.black,
+          //      borderRadius: BorderRadius.circular(100.h),
+          //    ),
+          //  ),
+          // ),
           7.h.verticalSpacer,
         ],
       ),
