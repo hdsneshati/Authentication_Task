@@ -23,11 +23,12 @@ class SignUpMethodd extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          SvgPicture.asset(
-            iconpath,
-            width: 20.w,
-            height: 24.59.h,
-          ),
+          // SvgPicture.asset(
+          //   iconpath,
+          //  width: 20.w,
+          //   height: 24.59.h,
+          // ),
+          Image.asset(iconpath),
           Row(
             children: [
               Text(

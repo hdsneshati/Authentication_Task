@@ -1,4 +1,7 @@
+import 'package:authentication_task/config/routing/routes.dart';
+import 'package:authentication_task/feature/presentation/authentication/screens/login_password_screen.dart';
 import 'package:authentication_task/feature/presentation/authentication/screens/login_screen.dart';
+import 'package:authentication_task/feature/presentation/intro/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
 
@@ -15,12 +18,14 @@ class MyApp extends StatelessWidget {
     return SizeConfigInit(
       referenceHeight: 900,
       referenceWidth: 360,
-      builder: (context, child) => MaterialApp(
+      builder: (context, child) => MaterialApp.router(
         title: 'Size Config Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const LoginScreen(),
+        debugShowCheckedModeBanner: false,
+        routerConfig: routs,
+        // home: context.goNamed('login'),
       ),
     );
   }

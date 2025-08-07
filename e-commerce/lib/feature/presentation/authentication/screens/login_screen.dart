@@ -1,8 +1,10 @@
 import 'package:authentication_task/config/asset/svg_path.dart';
 import 'package:authentication_task/config/extentions/gap_space_extension.dart';
+import 'package:authentication_task/feature/presentation/authentication/screens/login_password_screen.dart';
 import 'package:authentication_task/feature/presentation/authentication/widgets/registerform_widget.dart';
 import 'package:authentication_task/feature/presentation/authentication/widgets/signup_methods.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:size_config/size_config.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -36,7 +38,9 @@ class LoginScreen extends StatelessWidget {
             left: 23.w,
             child: RegisterForm(
               hinttext: "Email Address",
-              onTap: () {},
+              onTap: () {
+                context.go('/loginpassword');
+              },
               forgottext: "Dont have an Account ?",
               buttontext: " Create One",
             ),
@@ -46,21 +50,21 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               children: [
                 SignUpMethodd(
-                  iconpath: SvgPath.ap,
+                  iconpath: 'assets/img/Apple.png',
                   lable: "Apple ",
                 ),
                 SizedBox(
                   height: 12,
                 ),
                 SignUpMethodd(
-                  iconpath: SvgPath.sp,
+                  iconpath: 'assets/img/Google.png',
                   lable: "Google ",
                 ),
                 SizedBox(
                   height: 12,
                 ),
                 SignUpMethodd(
-                  iconpath: SvgPath.facebook,
+                  iconpath: 'assets/img/Facebook.png',
                   lable: "Facebook ",
                 )
               ],

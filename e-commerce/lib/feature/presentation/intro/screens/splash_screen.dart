@@ -1,6 +1,7 @@
-import 'package:authentication_task/config/asset/svg_path.dart';
+import 'package:authentication_task/config/extentions/gap_space_extension.dart';
+import 'package:authentication_task/feature/presentation/authentication/screens/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:size_config/size_config.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -14,11 +15,11 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    Future.delayed(const Duration(seconds: 115), () {
-      // Navigator.pushReplacement(
-      //  context,
-      //  MaterialPageRoute(builder: (context) => const LoginScreen()),
-      // );
+    Future.delayed(const Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
+      );
     });
   }
 
@@ -28,17 +29,21 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Theme.of(context).colorScheme.primary,
       body: Column(
         children: [
-          Align(
+          /*  Align(
               alignment: Alignment.center,
               child: SvgPicture.asset(
-                SvgPath.sp,
+                SvgPath.splash,
                 width: 100,
                 height: 100,
                 colorFilter: ColorFilter.mode(
                   Theme.of(context).colorScheme.onPrimary,
                   BlendMode.srcIn,
                 ),
-              )),
+              )),*/
+          SizedBox(
+            height: 382.h,
+          ),
+          Center(child: Image.asset('assets/img/Rectangle.png'))
         ],
       ),
     );
