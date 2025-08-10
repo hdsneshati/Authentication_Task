@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:size_config/size_config.dart';
 
 class SignUpMethodd extends StatelessWidget {
