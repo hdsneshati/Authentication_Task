@@ -1,4 +1,3 @@
-import 'package:authentication_task/config/extentions/gap_space_extension.dart';
 import 'package:authentication_task/feature/presentation/authentication/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
