@@ -6,6 +6,7 @@ class RegisterForm extends StatelessWidget {
   final String hinttext;
   final String forgottext;
   final String buttontext;
+  final TextEditingController controller;
   final VoidCallback onTap;
 
   const RegisterForm({
@@ -13,6 +14,7 @@ class RegisterForm extends StatelessWidget {
     required this.buttontext,
     required this.hinttext,
     required this.onTap,
+    required this.controller,
     super.key,
   });
 
@@ -35,7 +37,10 @@ class RegisterForm extends StatelessWidget {
                   borderRadius:
                       BorderRadius.circular(4.0), // Optional: round the border
                 ),
+
                 hintText: hinttext,
+                // Controller: passwordController,
+
                 hintStyle: TextStyle(
                   fontFamily: "circular",
                   fontSize: 16.sp,
@@ -43,6 +48,7 @@ class RegisterForm extends StatelessWidget {
                 ),
                 border: InputBorder.none,
               ),
+              controller: controller,
             ),
             12.h.verticalSpacer,
             PrimaryButton(onTap: onTap),

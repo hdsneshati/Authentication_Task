@@ -15,7 +15,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       (event, emit) async {
         emit(AuthState(status: LoadingAuthStatus()));
         DataState data =
-            await useCases.registerUser(event.username, event.companyName);
+            await useCases.registerUser(event.username, event.password);
         if (data is SuccessData) {
           emit(state.copyWith(newStatus: SuccessRegisterUser(user: data.data)));
         } else {

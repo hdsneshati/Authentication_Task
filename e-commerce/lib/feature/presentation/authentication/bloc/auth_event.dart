@@ -9,9 +9,9 @@ sealed class AuthEvent extends Equatable {
 
 //وقتی کاربر می‌خواد ثبت‌نام کنه، فرستاده میشه.
 class RegisterUserEvent extends AuthEvent {
-  final String companyName;
+  final String password;
   final String username;
-  const RegisterUserEvent({required this.username, required this.companyName});
+  const RegisterUserEvent({required this.username, required this.password});
 }
 
 //رویدادی که وقتی کاربر می‌خواد از سیستم خارج بشه فرستاده میشه.

@@ -18,12 +18,15 @@ final GoRouter routs = GoRouter(
     GoRoute(
       path: '/login',
       name: "/login",
-      builder: (context, state) => const LoginScreen(),
+      builder: (context, state) => LoginScreen(),
     ),
     GoRoute(
       path: '/loginpassword',
       name: "/loginpassword",
-      builder: (context, state) => const LoginPasswordScreen(),
+      builder: (context, state) {
+        final userName = state.extra as String; // گرفتن ورودی
+        return LoginPasswordScreen(userName: userName);
+      },
     ),
   ],
 );
