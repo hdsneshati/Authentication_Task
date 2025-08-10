@@ -1,7 +1,4 @@
 import 'package:authentication_task/config/routing/routes.dart';
-import 'package:authentication_task/feature/presentation/authentication/screens/login_password_screen.dart';
-import 'package:authentication_task/feature/presentation/authentication/screens/login_screen.dart';
-import 'package:authentication_task/feature/presentation/intro/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:size_config/size_config.dart';
 
