@@ -1,7 +1,6 @@
 import 'package:authentication_task/core/dependency_injection/locator.dart';
 import 'package:authentication_task/feature/presentation/authentication/bloc/auth.bloc.dart';
 import 'package:authentication_task/feature/presentation/authentication/bloc/auth_state.dart';
-import 'package:authentication_task/feature/presentation/authentication/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -36,9 +35,9 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Theme.of(context).colorScheme.primary,
       body: Column(
         children: [
-          MainUi(),
+          const MainUi(),
           BlocListener<AuthBloc, AuthState>(listener: (context, state) {
-            Future.delayed(const Duration(seconds: 1)).then(
+            Future.delayed(const Duration(seconds: 5)).then(
               (_) {
                 if (preferencesOperator.getAccToken() != null) {
                   String userName = 'h';
