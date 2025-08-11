@@ -1,8 +1,8 @@
 import 'package:authentication_task/core/dependency_injection/locator.dart';
+import 'package:authentication_task/core/resource/data_state.dart';
 import 'package:authentication_task/core/utils/error.handler.dart';
 import 'package:authentication_task/core/utils/preferences_oprator.dart';
 import 'package:authentication_task/feature/domain/auth/entity/user.entity.dart';
-import 'package:authentication_task/feature/domain/auth/usecase/auth.usecase.dart';
 import 'package:dio/dio.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';

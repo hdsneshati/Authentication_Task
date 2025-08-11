@@ -1,3 +1,4 @@
+import 'package:authentication_task/core/resource/data_state.dart';
 import 'package:authentication_task/feature/domain/auth/usecase/auth.usecase.dart';
 import 'package:authentication_task/feature/presentation/authentication/bloc/auth_state.dart';
 import 'package:authentication_task/feature/presentation/authentication/bloc/auth_status.dart';
