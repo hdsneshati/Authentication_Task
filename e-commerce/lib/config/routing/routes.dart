@@ -13,7 +13,7 @@ final GoRouter routs = GoRouter(
     GoRoute(
       path: '/splash',
       name: "/splash",
-      builder: (context, state) => const SplashScreen(),
+      builder: (context, state) => SplashScreen(),
     ),
     GoRoute(
       path: '/login',
