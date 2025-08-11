@@ -1,9 +1,25 @@
 import 'package:authentication_task/config/routing/routes.dart';
+import 'package:authentication_task/core/dependency_injection/locator.dart';
+import 'package:authentication_task/feature/presentation/authentication/bloc/auth.bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:size_config/size_config.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await locatorSetup();
+
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+  ]);
+
+  runApp(MultiBlocProvider(providers: [
+    BlocProvider(
+      create: (context) => AuthBloc(locator()),
+    ),
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
