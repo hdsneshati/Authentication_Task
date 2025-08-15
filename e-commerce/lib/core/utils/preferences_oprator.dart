@@ -9,18 +9,19 @@ class PreferencesOperator {
     preferences = locator<SharedPreferences>();
   }
   String? getAccToken() {
-    String? token = preferences.getString('acctoken');
+    String? token = preferences.getString("accessToken");
     return token;
   }
 
   Future<String?> getRefToken() async {
-    String? token = preferences.getString('reftoken');
+    String? token = preferences.getString("refreshToken");
+    print(token);
     return token;
   }
 
   Future<void> refreshAccessToken(String acctoken, String reftoken) async {
-    await preferences.setString('acctoken', acctoken);
-    await preferences.setString('reftoken', reftoken);
+    await preferences.setString("accessToken", acctoken);
+    await preferences.setString("refreshToken", reftoken);
   }
 
   void logout() {
@@ -30,14 +31,21 @@ class PreferencesOperator {
 
   void saveUserData(UserEntity user) {
     preferences.setString('userName', user.firstName!);
+
+    print(user.firstName);
     // preferences.setString('userPhone', user.!);
     preferences.setString('userId', user.id!.toString());
+    print(user.id);
+
     //preferences.setString('role', user.role![0].toString());
-    preferences.setString('acctoken', user.accessToken!);
+    preferences.setString("accessToken", user.accessToken!);
+    print(user.accessToken);
+
     // preferences.setString('company-name', user.company!.title);
     // preferences.setString('company-name', user.company!.title);
 
-    preferences.setString('reftoken', user.refreshToken!);
+    preferences.setString("refreshToken", user.refreshToken!);
+    print(user.refreshToken);
   }
 
   void updateUserData(UserEntity user) {
@@ -59,7 +67,7 @@ class PreferencesOperator {
   }
 
   bool isUserLoggedInBefor() {
-    String? result = preferences.getString('reftoken');
+    String? result = preferences.getString("refreshToken");
     if (result != null) {
       return true;
     } else {

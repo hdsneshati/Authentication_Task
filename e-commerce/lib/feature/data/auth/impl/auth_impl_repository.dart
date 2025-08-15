@@ -44,6 +44,8 @@ class AuthRepositoryIMPL {
       String username, String password) async {
     try {
       Response response = await apiProvider.registerUser(username, password);
+      Response ref = await apiProvider.callLogin(username);
+
       if (response.statusCode == 200) {
         UserEntity user = UserEntity.fromJsonWithOutTokens(response.data);
         //update

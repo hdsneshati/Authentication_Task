@@ -15,11 +15,10 @@ Future<void> main() async {
     DeviceOrientation.portraitUp,
   ]);
 
-  runApp(MultiBlocProvider(providers: [
-    BlocProvider(
-      create: (context) => AuthBloc(locator()),
-    ),
-  ], child: const MyApp()));
+  runApp(BlocProvider(
+    create: (context) => AuthBloc(locator()),
+    child: const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

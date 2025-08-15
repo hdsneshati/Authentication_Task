@@ -81,6 +81,7 @@ class DioClient {
   Future<bool> _refreshAccessToken() async {
     print(
         "Refreshing access token"); //الان دارم عملیات Refresh Token رو شروع می‌کنم پیام به logنمایش میده
+
     String? refreshToken = await _preferences.getRefToken();
     print("old REF TOKEN : ${refreshToken.toString()}");
     if (refreshToken == null) {
@@ -94,8 +95,8 @@ class DioClient {
         options: Options(headers: {'Authorization': "Bearer $refreshToken"}),
       );
       if (response.statusCode == 201 && response.data != null) {
-        final newAccessToken = response.data['access_token'] ?? "";
-        final newRefreshToken = response.data['refresh_token'] ?? "";
+        final newAccessToken = response.data["accessToken"] ?? "";
+        final newRefreshToken = response.data["refreshToken"] ?? "";
         if (newAccessToken.isNotEmpty && newRefreshToken.isNotEmpty) {
           print("\n new ACC TOKEN : ${newAccessToken.toString()}");
           print("\n new REF TOKEN : ${newRefreshToken.toString()}");
@@ -119,6 +120,7 @@ class DioClient {
       onRequest: (options, handler) async {
         print("Request URL: ${options.uri}");
         String? token = _preferences.getAccToken();
+        String? refreshToken = await _preferences.getRefToken();
         if (token != null) {
           options.headers['Authorization'] = "Bearer $token";
         }
@@ -127,6 +129,7 @@ class DioClient {
       },
       //* ON RESPONSE//دریافت پاسخ از سرور و فرستادنش به لایه بالاتر.
       onResponse: (response, handler) {
+        print(response.data);
         return handler.next(response);
       },
       //! ON ERROR

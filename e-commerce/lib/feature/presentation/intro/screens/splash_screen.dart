@@ -1,11 +1,10 @@
 import 'package:authentication_task/core/dependency_injection/locator.dart';
-import 'package:authentication_task/feature/presentation/authentication/bloc/auth.bloc.dart';
-import 'package:authentication_task/feature/presentation/authentication/bloc/auth_state.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:size_config/size_config.dart';
 import 'package:authentication_task/core/utils/preferences_oprator.dart';
+import 'dart:convert'; // برای jsonDecode
+import 'package:http/http.dart' as http;
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({super.key});
@@ -19,6 +18,18 @@ class _SplashScreenState extends State<SplashScreen> {
       PreferencesOperator(locator());
   @override
   void initState() {
+    Future.delayed(const Duration(seconds: 3)).then(
+      (_) {
+        mainget();
+        /* if ((preferencesOperator.getAccToken() ?? '').isNotEmpty ||
+            preferencesOperator.getAccToken() != null) {
+          String userName = 'h';
+          context.go('/loginpassword', extra: userName);
+        } else {
+          context.go('/login');
+        }*/
+      },
+    );
     super.initState();
 
     // Future.delayed(const Duration(seconds: 5), () {
@@ -36,18 +47,6 @@ class _SplashScreenState extends State<SplashScreen> {
       body: Column(
         children: [
           const MainUi(),
-          BlocListener<AuthBloc, AuthState>(listener: (context, state) {
-            Future.delayed(const Duration(seconds: 5)).then(
-              (_) {
-                if (preferencesOperator.getAccToken() != null) {
-                  String userName = 'h';
-                  context.go('/loginpassword', extra: userName);
-                } else {
-                  context.go('/login');
-                }
-              },
-            );
-          }),
         ],
       ),
     );
@@ -61,24 +60,42 @@ class MainUi extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        /*  Align(
-                alignment: Alignment.center,
-                child: SvgPicture.asset(
-                  SvgPath.splash,
-                  width: 100,
-                  height: 100,
-                  colorFilter: ColorFilter.mode(
-                    Theme.of(context).colorScheme.onPrimary,
-                    BlendMode.srcIn,
-                  ),
-                )),*/
-        SizedBox(
-          height: 382.h,
-        ),
-        Center(child: Image.asset('assets/img/Rectangle.png'))
-      ],
+    return Expanded(
+      child: Column(
+        children: [
+          /*  Align(
+                  alignment: Alignment.center,
+                  child: SvgPicture.asset(
+                    SvgPath.splash,
+                    width: 100,
+                    height: 100,
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).colorScheme.onPrimary,
+                      BlendMode.srcIn,
+                    ),
+                  )),*/
+          SizedBox(
+            height: 382.h,
+          ),
+          Center(child: Image.asset('assets/img/Rectangle.png'))
+        ],
+      ),
     );
+  }
+}
+
+void mainget() async {
+  // درخواست GET
+  final response = await http.get(
+    Uri.parse('https://dummyjson.com/test'),
+  );
+
+  if (response.statusCode == 200) {
+    // تبدیل پاسخ به Map
+    final data = jsonDecode(response.body);
+    print('mainget');
+    print(data); // { status: 'ok', method: 'GET' }
+  } else {
+    print('Error: ${response.statusCode}');
   }
 }

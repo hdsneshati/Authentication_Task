@@ -17,11 +17,32 @@ class AuthApiProvider {
     return response;
   }
 
-  Future<dynamic> registerUser(String username, String companyName) async {
-    var url = "${ApiConstants.domainName}${ApiConstants.me}";
+/*  Future<dynamic> login() async {
+    final url = Uri.parse('https://dummyjson.com/auth/login');
+    final headers = {'Content-Type': 'application/json'};
+    final body = jsonEncode({
+      'username': 'emilys',
+      'password': 'emilyspass',
+      'expiresInMins': 30,
+    });
+
+    final response = await http.post(url, headers: headers, body: body);
+
+    if (response.statusCode == 200) {
+      final data = jsonDecode(response.body);
+      print('Login successful: $data');
+    } else {
+      print('Login failed with status: ${response.statusCode}');
+      print('Response body: ${response.body}');
+    }
+    return response;
+  }*/
+
+  Future<dynamic> registerUser(String username, String password) async {
+    var url = "${ApiConstants.domainName}${ApiConstants.login}";
     var response = await _dio.client.patch(
       url,
-      data: {"name": username, "companyTitle": companyName},
+      data: {"name": username, "password": password},
     );
 
     return response;
@@ -30,6 +51,7 @@ class AuthApiProvider {
   static refreshToken() async {
     PreferencesOperator pr = PreferencesOperator(locator());
     var token = pr.getRefToken();
+    print('pr. get ref token');
     Dio dio = Dio();
     String url = "${ApiConstants.domainName}${ApiConstants.refreshToken}";
     var respons = await dio.post(url,
